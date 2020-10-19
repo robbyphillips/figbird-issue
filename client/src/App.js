@@ -62,6 +62,7 @@ function CreateThings() {
 function Things({ text }) {
   const { status, data, error } = useFind('things', {
     query: { text: { $like: `%${text}%` } },
+    realtime: 'refetch'
   });
 
   if (status === 'loading') {
